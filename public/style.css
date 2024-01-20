@@ -1,0 +1,509 @@
+@font-face {
+    font-family: 'enigma';
+    src: url('../_static/fonts/enigma.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bg: #C4C4C4;
+    --sidebarBG: #959294;
+    --sidebarSelect: #858183;
+    --grey-4: #333334;
+    --grey-5: #bbb;
+    --color-1: #64af50; /*#1F09AC*/
+    --font-1: "Roboto", sans-serif;
+    --VSGreen: #00FF00;
+    --VSPurple: #6F34FF;
+  }
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+p{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+a{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400 ;
+}
+
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.bg_green{
+    background-color: rgb(0, 255, 0);
+}
+
+.bg_purple{
+    background-color: rgb(111, 52, 255);
+}
+
+.text_green{
+    color:rgb(0, 255, 0);
+}
+
+.text_Lightgreen{
+    color:rgb(0, 194, 0);
+}
+
+.text_purple{
+    color:rgb(111, 52, 255);
+}
+
+.bg_black{
+    background-color: rgb(0, 0, 0);
+}
+
+.w100{
+    width: 100%;
+}
+
+.w50{
+    width: 50%;
+}
+
+.vh100{
+    height: 100vh!important;
+}
+
+.vh50{
+    height: 48vh!important;
+}
+
+.fw400{
+    font-weight: 400 !important;
+}
+
+.fw600{
+    font-weight: 600 !important;
+}
+
+.fw800{
+    font-weight: 800 !important;
+}
+
+.center{
+    line-height: 48vh!important;
+    height: 48vh!important;
+    text-align: center;
+}
+
+.center p {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.Mycontainer{
+    width: 100%;
+    height: 100%;
+    margin: 0px !important;
+}
+
+/*======== 側邊選單 =====*/
+
+.Sidebar{
+    background-color: var(--sidebarBG);
+    padding: 0px !important;
+    height: 100vh;
+    position: relative;
+    /* width: 250px; */
+    /*min-width: 250px;*/
+}
+
+@media (max-width: 1199.98px) {
+    #sidebarCollapse {
+        display: none;
+        width: 250px !important;
+    }
+}
+
+.Sidebar_Title{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #2C2C2C;
+}
+
+.Sidebar_Title_Img{
+    width: 100%;
+    max-width: 250px;
+}
+
+.Sidebar_Footer{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #2C2C2C;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.sidebarList{
+    list-style-type: none;
+    padding: 0px !important;
+}
+
+.sidebarList li{
+    background-color: var(--sidebarBG);
+    height: 80px;
+    padding: 6px;
+    padding-left: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.clicked{
+    background-color: var(--sidebarSelect) !important;
+}
+
+.ListTitle{
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 16px; 
+}
+
+.ListWord{
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+    margin-left: 8px;
+    font-size: 12px; 
+}
+
+.ListContainer {
+    display: flex; /* 使用 flexbox 進行排版 */
+    align-items: center; /* 垂直居中對齊子元素 */
+    background-color: #757575; /* 容器背景色 */
+    padding: 10px; /* 容器內距 */
+}
+
+.circle {
+    width: 42px; /* 圓形的寬度 */
+    height: 42px; /* 圓形的高度 */
+    /*background-color: white;  圓形背景色 */
+    border: #000000 2.5px solid;
+    border-radius: 50%; /* 圓形邊界半徑 */
+    display: flex; /* 使用 flexbox 進行排版 */
+    align-items: center; /* 垂直居中對齊子元素 */
+    justify-content: center; /* 水平居中對齊子元素 */
+    margin-right: 10px; /* 與右邊元素的間隔 */
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.ListText p {
+    margin: 0; /* 移除邊界 */
+    /*color: white;  文字顏色 */
+}
+
+/*======== 聊天室 =====*/
+
+.Chatroom{
+    background-color: #C4C4C4;
+    padding: 0px !important;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* width: 100% -250px !important; */
+}
+
+.Chatroom_Title_Div{
+    position: fixed; /* 固定定位 */
+    top: 0;
+    width: 100%;
+    height: 100px;
+    /* border: #2C2C2C 1px solid; */
+    /* box-shadow: -6px -8px 50px #a8a8a8;
+    -webkit-box-shadow: -6px -8px 50px #a8a8a8;
+    -moz-box-shadow: -6px -8px 50px #a8a8a8; */
+    background-color: var(--bg);
+    padding: 30px;
+    z-index: 10;
+}
+
+.Chatroom_title{
+    color: black;
+    text-decoration: none;
+    margin-left: 8px;
+    font-size: 24px; 
+}
+
+ .numRound {
+    display: inline-block;
+    justify-content: center;
+    align-items: center; 
+    width: 40px; 
+    height: 40px;
+    border: #000000 2px solid;
+    text-decoration: none;
+    border-radius: 50%;
+    color: black; 
+    font-size: 24px; 
+}
+.numRound a{
+    margin-left: 4px;
+} 
+.topicDiv{
+    width: 80% !important;
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    min-height: 60px;
+    height: auto;
+    padding: 6px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.ResultDiv{
+    width: 80% !important;
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    height: 60px;
+    padding: 6px;
+    border-radius: 30px;
+}
+
+.ResultPic{
+    width: 80% !important;
+    display: flex;
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    height: auto;
+    background-color: (--bg);
+    border-radius: 30px;
+}
+.RGpic{
+    background-color: var(--VSGreen);
+    width: 50%;
+    padding: 3%;
+    border-radius: 30px 0px 0px 30px;
+}
+.RPpic{
+    background-color: var(--VSPurple);
+    width: 50%;
+    padding: 3%;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.ResultPic img {
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    display: block;
+    filter: none;
+    margin-top: 10px;
+}
+
+.ChatContainer{
+    padding: 3% 2%;
+}
+
+.topicWord{
+    text-align: center;
+    margin-bottom: 2px;
+}
+.resultWord{
+    text-align: center;
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+/*======== Chat Message Container =====*/
+
+.chat .message-container {
+    padding: 5px;
+    overflow-y: auto;
+    width: 100%;
+    height: 96%;
+    padding-right: 18px;
+    box-sizing: content-box;
+    background-color: var(--bg);
+  }
+  
+  .chat .divider span {
+    /*background: white;*/
+    padding: 0px 10px;
+  }
+  
+  .chat .comment {
+    min-height: 50px;
+    width: 100%;
+    float: left;
+    margin: 20px 0px;
+    text-align: left;
+  }
+  
+  .chat .me {
+    float: right;
+    text-align: right;
+  }
+  
+  .chat .comment img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    float: left;
+  }
+  
+  .chat .me img {
+    float: right;
+  }
+  
+  .chat .bubble {
+    display: inline-block;
+    /*background: var(--color-1);*/
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: black;
+    font-family: var(--font-1);
+    max-width: 70%;
+    position: relative;
+    margin: 0px 20px;
+  }
+  
+  .chat .me .bubble {
+    /*background: var(--grey-5);*/
+    border: var(--VSPurple) solid 1px;
+    text-align: left;
+  }
+
+  .chat .other .bubble {
+    border: var(--VSGreen) solid 1px;
+    text-align: left;
+  }
+  
+  .chat .other .bubble:before {
+    content: "";
+    top: 0px;
+    left: -25px;
+    position: absolute;
+    background: transparent;
+    height: 0px;
+    width: 0px;
+    /*border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid var(--VSGreen);*/
+  }
+  
+  .chat .me .bubble:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    background: transparent;
+    height: 0px;
+    width: 0px;
+    /*border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid var(--VSPurple);*/
+  }
+  
+  .chat .bubble img {
+    border-radius: 5px;
+    height: 250px;
+    width: auto;
+    filter: none;
+    margin-top: 10px;
+  }
+  
+  .chat .bubble a {
+    color: black;
+  }
+
+/* 首頁modal */
+
+.home{
+    background-color: #000000;
+}
+
+.HomeDiv{
+    width: 100%;
+    padding: 20vh 30%;
+    height: 100vh;
+}
+.homePics{
+    width: 100%;
+    display: block;
+}
+.homeArrow{
+    width: 50px;
+    height: auto;
+    display: block;
+}
+
+.CoverBlack{
+    background-color: #000000;
+    z-index: 1055;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.modal{
+    z-index: 1060;
+}
+
+.modalHide{
+    display: none;
+}
+
+.PicModal{
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: rgba(148, 148, 148, 30%);
+    position: absolute;
+    top: 100px;
+}
+
+.PicModal img{
+
+}
+
+/* 自定義 modal 顯示時的動畫 */
+.modal.left .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+}
+
+.modal.left.fade .modal-dialog {
+    -webkit-transition: transform 0.3s ease-out;
+       -moz-transition: transform 0.3s ease-out;
+        -o-transition: transform 0.3s ease-out;
+           transition: transform 0.3s ease-out;
+}
+
+.modal.left.fade.show .modal-dialog {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
