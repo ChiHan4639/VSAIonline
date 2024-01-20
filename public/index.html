@@ -15,26 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Datepicker CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/css/bootstrap-datepicker.min.css" rel="stylesheet"> -->
+
     <link href="calendar.css" rel="stylesheet" >
     <link href="style.css" rel="stylesheet" >
     
 </head>
 <body>
-    
     <div class="Mycontainer">
         <div class="row">
             <div class="col-xl-2 col-12 Sidebar" id="sidebarCollapse">
                 <div class="Sidebar_Title justify-content-center align-items-center ">
-                    <img src="img/web/02_chat_title.png" class="Sidebar_Title_Img" alt="...">
-                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PicModal">
-                      Launch static backdrop modal
+                    <img src="img/web/02_chat_title.png" class="Sidebar_Title_Img" alt="..." data-bs-toggle="modal" data-bs-target="#PicturesModal">
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PicturesModal">
+                      Launch demo modal
                     </button> -->
                 </div>
-                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
-                  打開全屏 Modal
-                </button> -->
                 <ul class="sidebarList" id="myList">
                   <!-- 排版用Code -->
                 </ul>
@@ -50,9 +45,6 @@
                     <div class="numRound">
                         <a id="RoundNum">01</a>
                     </div>
-                    <!-- <button class="" type="button" onclick="toggleSidebar()">
-                      按鈕
-                    </button> -->
                     <!-- <div class="circle">
                       02
                     </div> -->
@@ -72,7 +64,7 @@
                           <div class="bubble">
                             <span id="Apromp1"></span>
                             <br>
-                            <img id="Apic1" src="img/img404.jpg" alt="">
+                            <img id="Apic1" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div class="comment me">
@@ -80,7 +72,7 @@
                           <div class="bubble">
                             <span id="Bpromp1"></span>
                             <br>
-                            <img id="Bpic1" src="img/img404.jpg" alt="">
+                            <img id="Bpic1" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div id="CChatDiv1">
@@ -99,7 +91,7 @@
                           <div class="bubble">
                             <span id="Apromp2"></span>
                             <br>
-                            <img id="Apic2" src="img/img404.jpg" alt="">
+                            <img id="Apic2" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div class="comment me">
@@ -107,7 +99,7 @@
                           <div class="bubble">
                             <span id="Bpromp2"></span>
                             <br>
-                            <img id="Bpic2" src="img/img404.jpg" alt="">
+                            <img id="Bpic2" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div id="CChatDiv2">
@@ -126,7 +118,7 @@
                           <div class="bubble">
                             <span id="Apromp3"></span>
                             <br>
-                            <img id="Apic3" src="img/img404.jpg" alt="">
+                            <img id="Apic3" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div class="comment me">
@@ -134,7 +126,7 @@
                           <div class="bubble">
                             <span id="Bpromp3"></span>
                             <br>
-                            <img id="Bpic3" src="img/img404.jpg" alt="">
+                            <img id="Bpic3" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
                         <div id="CChatDiv3">
@@ -144,26 +136,26 @@
                     <!-- 結算 -->
                     <div class="ResultPic" id="resultPic">
                       <div class="RGpic">
-                        <img id="Apic4" src="img/img404.jpg" alt="">
+                        <img id="Apic4" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                       </div>
                       <div class="RPpic">
-                        <img id="Bpic4" src="img/img404.jpg" alt="">
+                        <img id="Bpic4" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                       </div>
                     </div>
                     <div class="ResultDiv" id="resultDiv">
                       <p class="resultWord" id="resultTitle">WINNER IS GREEN SIDE</p>
                     </div>
                 </div>
-                <!-- <div class="modal-dialog modal-dialog-centered" id="PicModal">
-                  <img id="PicModalimg" src="img/img404.jpg" alt="">
-                </div> -->
               </div>
-              <!-- <div class="PicModal">
-                <img id="PicModalimg" src="img/img404.jpg" alt="">
-              </div> -->
-              
               <!-- End of 聊天室內容 -->
         </div>
+    </div>
+
+    <!-- 顯示圖片Modal -->
+    <div class="modal fade" id="PicturesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" id="PicModal">
+        <img id="PicModalimg" src="img/img404.jpg" alt="">
+      </div>
     </div>
 
     <div class="CoverBlack" id="coverBlack"></div>
@@ -213,6 +205,7 @@
                     </div>
                     <button class="today-btn">Today</button>
                   </div>
+                  <!-- goto-today 已display: none -->
                 </div>
               </div>
               <!-- right 已display: none -->
@@ -223,6 +216,7 @@
                 </div>
                 <div class="events"></div>
               </div>
+              <!-- right 已display: none -->
             </div>
           </div>
         </div>
@@ -236,25 +230,7 @@
     <script src="javascript/index.js"></script>
     <!-- 日曆JS -->
     <script src="javascript/calendar.js"></script>
-    
-      <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
 
-        for (var i = 0; i < 31; i++) { // 假設一個月有 31 天
-            var dayEl = document.createElement('div');
-            dayEl.className = 'calendar-day';
-            dayEl.textContent = i + 1;
-            dayEl.onclick = function () {
-                document.querySelectorAll('.calendar-day').forEach(function (day) {
-                    day.classList.remove('selected');
-                });
-                this.classList.add('selected');
-            };
-            calendarEl.appendChild(dayEl);
-          }
-        });
-      </script> -->
       <script>
 
         document.getElementById("sideArrow").addEventListener("click", function() {
@@ -276,6 +252,7 @@
             sidebarDiv.classList.remove("Showside");
           }
         }
+
       </script>
       <script>
 
@@ -316,7 +293,20 @@
         });
 
       </script>
+      <script>
+        for(let i=1;i<5;i++){
+            document.getElementById("Apic"+i).addEventListener("click", function() {
+            ApplyPicToResult("Apic"+i);
+          });
+          document.getElementById("Bpic"+i).addEventListener("click", function() {
+            ApplyPicToResult("Bpic"+i);
+          });
+        }
+        function ApplyPicToResult(ColorRepresent){
+          document.getElementById("PicModalimg").src = document.getElementById(ColorRepresent).src;
+        }
+      </script>
 
-</body>
+  </body>
 </html>
 

@@ -29,9 +29,9 @@ function HoldData(year,month,day) {
             //取出對話前10個字，目前有些資料為空
             if(doc.data().CChat1 != ""){
                 var FirstTen = doc.data().CChat1.split(/(PPurle:|GGreen:)/).slice(0);
-                console.log(FirstTen[2]);
+                //console.log(FirstTen[2]);
                 let firstTenChars = FirstTen[2].slice(0, 10);
-                console.log(firstTenChars);
+                //console.log(firstTenChars);
                 creatListItem(doc.id,currentNo,firstTenChars,"myList");
             }else{
                 creatListItem(doc.id,currentNo,"","myList");
@@ -202,7 +202,7 @@ function createCommentFromText(text,containerId) {
         console.log(containerId+"沒有chat紀錄");
         text ="無法讀取文字。"
         }else{
-        console.log(text);
+        //console.log(text);
         const parts = text.split(/(PPurle:|GGreen:)/).slice(1);
         for (let i = 0; i < parts.length; i += 2) {
             const type = parts[i].trim();
@@ -257,7 +257,6 @@ function displayImage(imagePath,imageID) {
 
     imageRef.getDownloadURL().then(function(url) {
         // 创建或获取一个 <img> 元素
-        
         if (!img) {
             img = document.createElement('img');
             img.id = imageID;
