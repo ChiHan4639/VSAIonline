@@ -50,15 +50,18 @@ function HoldData(year,month,day) {
             //console.log("這裡");   
             
         })
-            var ul = document.getElementById("myList");
             //聊天室中顯示最新一筆資料
-            var docData = getDataFromSessionStorage(ul.firstChild.id);
-            //console.log(docData);  
-            getData(docData);
+            var ul = document.getElementById("myList");
+
+            ul.firstChild.classList.add("clicked");
             var divTextContent = ul.firstChild.querySelector('div.circle').textContent;
             document.getElementById("RoundNum").textContent = divTextContent;
             document.getElementById("RoundTitle").textContent = "Round"+divTextContent;
-            ul.firstChild.classList.add("clicked");
+
+            var docData = getDataFromSessionStorage(ul.firstChild.id);
+            //console.log(docData);  
+            getData(docData);
+
         ;
     }).catch((error) => {
         console.log("Error getting documents: ", error);
@@ -145,12 +148,16 @@ function getData(dataIn) {
     createCommentFromText(data.CChat3,"CChatDiv3");
     displayImage(data.Apic3+".webp","Apic4");
     displayImage(data.Bpic3+".webp","Bpic4");
-    //console.log(data.Winner);
     SetResultTitle(data.Winner);
 }
 
 function showTextContent(data,elementID) {
     var target = document.getElementById(elementID);
+    if(data =="" | data == undefined){
+        data="無法讀取資料";
+    }else{
+        //不做任何調整
+    }
     try{
         switch (elementID) {
             case "CTopic1":
@@ -191,9 +198,11 @@ function clearAllChatItems(ChatID) {
 function createCommentFromText(text,containerId) {
     const container = document.getElementById(containerId);
     clearAllChatItems(containerId);
-    if(text == ""){
+    if(text == "" | text == undefined){
         console.log(containerId+"沒有chat紀錄");
+        text ="無法讀取文字。"
         }else{
+        console.log(text);
         const parts = text.split(/(PPurle:|GGreen:)/).slice(1);
         for (let i = 0; i < parts.length; i += 2) {
             const type = parts[i].trim();

@@ -9,6 +9,7 @@
     --primary-clr: #6F34FF;
     --VSGreen: #00FF00;
     --VSPurple: #6F34FF;
+    --sidebarSelect: #858183;
   }
     * {
     margin: 0;
@@ -17,17 +18,17 @@
   }
   /* nice scroll bar */
 
-  /* ::-webkit-scrollbar {
-    width: 5px;
+   ::-webkit-scrollbar {
+    width: 0px;
   }
   ::-webkit-scrollbar-track {
     background: #f5f5f5;
     border-radius: 50px;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--primary-clr);
+    background: var(--sidebarSelect);
     border-radius: 50px;
-  } */
+  } 
   
   /* body {
     position: relative;
@@ -141,20 +142,6 @@
 
 /* 手機響應式 */
 
-  @media (max-width: 768px) {
-    .HomeDiv {
-      padding: 18vh 18% !important;
-    }
-    .calendar .days {
-      font-size: 32px !important;
-    }
-    .calendar .days .today {
-      font-size: 32px !important;
-    }
-    .calendar .days .active {
-      font-size: 32px !important;
-    }
-  }
   .calendar .days .day {
     width: 14.28%;
     height: 90px;
@@ -518,6 +505,21 @@
     color: var(--primary-clr);
   }
   
+  @media screen and (max-width: 768px) {
+    .HomeDiv {
+      padding: 18vh 18% !important;
+    }
+    .calendar .days {
+      font-size: 32px !important;
+    }
+    .calendar .days .today {
+      font-size: 32px !important;
+    }
+    .calendar .days .active {
+      font-size: 32px !important;
+    }
+  }
+
   /* media queries */
   
   @media screen and (max-width: 1000px) {
