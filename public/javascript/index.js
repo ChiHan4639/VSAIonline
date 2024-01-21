@@ -132,6 +132,7 @@ function getData(dataIn) {
     displayImage(data.Apic1+".webp","Apic1");
     displayImage(data.Bpic1+".webp","Bpic1");
     createCommentFromText(data.CChat1,"CChatDiv1");
+    createCommentFromText(data.EChat1,"EChatDiv1");
     showTextContent(data.CTopic2,"CTopic2");
     showTextContent(data.ETopic2,"ETopic2");
     showTextContent(data.Apromp2,"Apromp2");
@@ -139,6 +140,7 @@ function getData(dataIn) {
     displayImage(data.Apic2+".webp","Apic2");
     displayImage(data.Bpic2+".webp","Bpic2");
     createCommentFromText(data.CChat2,"CChatDiv2");
+    createCommentFromText(data.EChat2,"EChatDiv2");
     showTextContent(data.CTopic3,"CTopic3");
     showTextContent(data.ETopic3,"ETopic3");
     showTextContent(data.Apromp3,"Apromp3");
@@ -146,6 +148,7 @@ function getData(dataIn) {
     displayImage(data.Apic3+".webp","Apic3");
     displayImage(data.Bpic3+".webp","Bpic3");
     createCommentFromText(data.CChat3,"CChatDiv3");
+    createCommentFromText(data.EChat3,"EChatDiv3");
     displayImage(data.Apic3+".webp","Apic4");
     displayImage(data.Bpic3+".webp","Bpic4");
     SetResultTitle(data.Winner);

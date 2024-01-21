@@ -26,9 +26,6 @@
             <div class="col-xl-2 col-12 Sidebar" id="sidebarCollapse">
                 <div class="Sidebar_Title justify-content-center align-items-center ">
                     <img src="img/web/02_chat_title.png" class="Sidebar_Title_Img" alt="..." data-bs-toggle="modal" data-bs-target="#PicturesModal">
-                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PicturesModal">
-                      Launch demo modal
-                    </button> -->
                 </div>
                 <ul class="sidebarList" id="myList">
                   <!-- 排版用Code -->
@@ -38,20 +35,34 @@
                 </div>
             </div>
             <div class="col-xl-10 col-12 Chatroom">
-                <div class="Chatroom_Title_Div justify-content-left align-items-left ">
-                    <div class="BackArrow" id="sideArrow">
-                      〈
+                <div class="Hcontainer">
+                  <div class="newHeaderDiv">
+                    <!-- justify-content-left align-items-left -->
+                    <div class="TitleRound">
+                      <div class="BackArrow" id="sideArrow">
+                        〈
+                      </div>
+                      <div class="numRound">
+                          <a id="RoundNum">01</a>
+                      </div>
+                      <a class="Chatroom_title" id="RoundTitle">Round01</a>
                     </div>
-                    <div class="numRound">
-                        <a id="RoundNum">01</a>
-                    </div>
-                    <!-- <div class="circle">
-                      02
-                    </div> -->
-                    <a class="Chatroom_title" id="RoundTitle">Round01</a>
+                      <!-- <div class="circle">
+                        02
+                      </div> -->
+                      <div class="Language">
+                        <div class="circleLanguage nowShow" id="CHN" onclick="LanguageSwitch(0)">
+                          中
+                        </div>
+                        <div class="circleLanguage" id="ENG" onclick="LanguageSwitch(1)">
+                          ENG
+                        </div>
+                      </div>
+                      
+                  </div>
                 </div>
                 <!-- Start of 聊天室內容 -->
-                <div class="container" style="margin-top: 140px; position: relative;">
+                <div class="container" style="position: relative;">
                     <!-- 題目一 -->
                     <div class="topicDiv" id="ChatStartPoint">
                         <p class="topicWord"><span id="CTopic1"></span></p>
@@ -75,7 +86,9 @@
                             <img id="Bpic1" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
-                        <div id="CChatDiv1">
+                        <div class="zh" id="CChatDiv1">
+                        </div>
+                        <div class="en notShow" id="EChatDiv1">
                         </div>
                       </div>
                     </div>
@@ -102,7 +115,9 @@
                             <img id="Bpic2" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
-                        <div id="CChatDiv2">
+                        <div class="zh" id="CChatDiv2">
+                        </div>
+                        <div class="en notShow" id="EChatDiv2">
                         </div>
                       </div>
                     </div>
@@ -129,7 +144,9 @@
                             <img id="Bpic3" src="img/img404.jpg" alt="" data-bs-toggle="modal" data-bs-target="#PicturesModal">
                           </div>
                         </div>
-                        <div id="CChatDiv3">
+                        <div class="zh" id="CChatDiv3">
+                        </div>
+                        <div class="en notShow" id="EChatDiv3">
                         </div>
                       </div>
                     </div>
@@ -259,6 +276,59 @@
         var myModal = new bootstrap.Modal(document.getElementById('fullscreenModal'), {
           keyboard: false
         })      
+
+        function LanguageSwitch(choice){
+          var btn_CHN = document.getElementById("CHN");
+          var btn_ENG = document.getElementById("ENG");
+          var chn01 = document.getElementById("CChatDiv1");
+          var chn02 = document.getElementById("CChatDiv2");
+          var chn03 = document.getElementById("CChatDiv3");
+          var eng01 = document.getElementById("EChatDiv1");
+          var eng02 = document.getElementById("EChatDiv2");
+          var eng03 = document.getElementById("EChatDiv3");
+          switch(choice){
+            case 0:
+                btn_CHN.classList.add("nowShow");
+                btn_ENG.classList.remove("nowShow");
+                chn01.classList.remove("notShow");
+                chn02.classList.remove("notShow");
+                chn03.classList.remove("notShow");
+                chn01.classList.add("doShow");
+                chn02.classList.add("doShow");
+                chn03.classList.add("doShow");
+                eng01.classList.remove("doShow");
+                eng02.classList.remove("doShow");
+                eng03.classList.remove("doShow");
+                eng01.classList.add("notShow");
+                eng02.classList.add("notShow");
+                eng03.classList.add("notShow");
+                // document.documentElement.style.setProperty('--LanguageCHN', 'block !important');
+                // document.documentElement.style.setProperty('--LanguageENG', 'none !important');
+                break;
+            case 1:
+                btn_CHN.classList.remove("nowShow");
+                btn_ENG.classList.add("nowShow");
+                chn01.classList.remove("doShow");
+                chn02.classList.remove("doShow");
+                chn03.classList.remove("doShow");
+                eng01.classList.remove("notShow");
+                eng02.classList.remove("notShow");
+                eng03.classList.remove("notShow");
+                chn01.classList.add("notShow");
+                chn02.classList.add("notShow");
+                chn03.classList.add("notShow");
+                eng01.classList.add("doShow");
+                eng02.classList.add("doShow");
+                eng03.classList.add("doShow");
+                // document.documentElement.style.setProperty('--LanguageENG', 'block !important');
+                // document.documentElement.style.setProperty('--LanguageCHN', 'none !important');
+                break;
+            default:
+                target.textContent = data;
+                break;
+          }
+
+        }
 
         document.getElementById("myList").addEventListener("click", function(event) {
             if (event.target.tagName === 'LI') {
