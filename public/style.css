@@ -30,7 +30,7 @@ html,body{
 @media only screen and (max-width: 768px) {
 
     html,body{
-        font-size: 16px !important;
+        font-size: 15px !important;
     }
 
     .container, .container-md, .container-sm{
@@ -156,20 +156,16 @@ a{
         margin-top: 90px !important;
     }
     .chat .bubble img {
-        height: 230px !important;
+        height: 225px !important;
     }
     .chat .me img {
     margin-right: 6px !important;
     }
-    /* .ResultDiv{
-        width: 80% !important;
-        margin: auto;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        height: 60px;
-    } */
     .resultWord{
-        font-size: 24px !important;
+        font-size: 18px !important;
+    }
+    .circleTitle{
+        margin-right: 0px !important;
     }
 }
 
@@ -475,7 +471,7 @@ a{
     width: 100%;
     display: block;
     filter: none;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .topicWord{
@@ -651,7 +647,8 @@ a{
 }
 
 #PicModal{
-    width: 50%;
+    width: 100%;
+    padding: 4%;
     /* height: calc(100vh - 100px); */
     height: auto;
     background-color: rgba(148, 148, 148, 0%);
@@ -688,4 +685,8 @@ a{
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+.modal-dialog {
+    margin: 0px !important;
 }

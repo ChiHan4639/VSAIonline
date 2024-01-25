@@ -18,7 +18,10 @@ const calendar = document.querySelector(".calendar"),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn "),
   calendarMonth = document.getElementById("CtitleMonth"),
-  calendarNum = document.getElementById("CtitleMonthNum");
+  calendarNum = document.getElementById("CtitleMonthNum")
+  calendar2 = document.querySelector(".calendar"),
+  date2 = document.querySelector(".date"),
+  daysContainer2 = document.querySelector(".days");
 
 let today = new Date();
 let activeDay;
