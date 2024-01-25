@@ -1,7 +1,6 @@
-const calendar = document.querySelector(".calendar"),
-  date = document.querySelector(".date"),
-  //monthNum = document.querySelector(".monthNum"),
-  daysContainer = document.querySelector(".days"),
+const calendar = document.getElementById("calendar01"),
+  date = document.getElementById("dateYear"),
+  daysContainer = document.getElementById("days01"),
   prev = document.querySelector(".prev"),
   next = document.querySelector(".next"),
   todayBtn = document.querySelector(".today-btn"),
@@ -19,14 +18,25 @@ const calendar = document.querySelector(".calendar"),
   addEventSubmit = document.querySelector(".add-event-btn "),
   calendarMonth = document.getElementById("CtitleMonth"),
   calendarNum = document.getElementById("CtitleMonthNum")
-  calendar2 = document.querySelector(".calendar"),
-  date2 = document.querySelector(".date"),
-  daysContainer2 = document.querySelector(".days");
+  calendar2 = document.getElementById("calendar02"),
+  date2 = document.getElementById("dateYear2"),
+  daysContainer2 = document.getElementById("days02");
+
+
+  // calendar = document.querySelector(".calendar"),
+  // date = document.querySelector(".date"),
+  // daysContainer = document.querySelector(".days"),
+
+// let today = new Date();
+// let activeDay;
+// let month = today.getMonth();
+// let year = today.getFullYear();
 
 let today = new Date();
 let activeDay;
-let month = today.getMonth();
-let year = today.getFullYear();
+let month = 0;//1月
+let year = 2024;
+
 
 const months = [
   "January",
@@ -67,6 +77,65 @@ console.log(eventsArr);
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
 function initCalendar() {
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const prevLastDay = new Date(year, month, 0);
+  const prevDays = prevLastDay.getDate();
+  const lastDate = lastDay.getDate();
+  const day = firstDay.getDay();
+  const nextDays = 7 - lastDay.getDay() - 1;
+
+  date.innerHTML = months[month] + " " + year;
+  calendarMonth.innerHTML = months[month];
+  calendarNum.innerHTML = (month+1).toString();
+  let days = "";
+
+  for (let x = day; x > 0; x--) {
+    days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
+  }
+
+  for (let i = 1; i <= lastDate; i++) {
+    //check if event is present on that day
+    let event = false;
+    eventsArr.forEach((eventObj) => {
+      if (
+        eventObj.day === i &&
+        eventObj.month === month + 1 &&
+        eventObj.year === year
+      ) {
+        event = true;
+      }
+    });
+    if (
+      i === new Date().getDate() &&
+      year === new Date().getFullYear() &&
+      month === new Date().getMonth()
+    ) {
+      activeDay = i;
+      getActiveDay(i);
+      updateEvents(i);
+      if (event) {
+        days += `<div class="day today active event">${i}</div>`;
+      } else {
+        days += `<div class="day today active">${i}</div>`;
+      }
+    } else {
+      if (event) {
+        days += `<div class="day event">${i}</div>`;
+      } else {
+        days += `<div class="day ">${i}</div>`;
+      }
+    }
+  }
+
+  for (let j = 1; j <= nextDays; j++) {
+    days += `<div class="day next-date">${j}</div>`;
+  }
+  daysContainer.innerHTML = days;
+  addListner();
+}
+
+function initCalendar2() {
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
   const prevLastDay = new Date(year, month, 0);

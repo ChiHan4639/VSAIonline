@@ -127,30 +127,30 @@ function getData(dataIn) {
     var data = dataIn;
     showTextContent(data.CTopic1,"CTopic1");
     showTextContent(data.ETopic1,"ETopic1");
-    showTextContent(data.Apromp1,"Apromp1");
-    showTextContent(data.Bpromp1,"Bpromp1");
-    displayImage(data.Apic1+".webp","Apic1");
-    displayImage(data.Bpic1+".webp","Bpic1");
+    showTextContent(data.Apromp1,"Bpromp1");
+    showTextContent(data.Bpromp1,"Apromp1");
+    displayImage(data.Apic1+".webp","Bpic1");
+    displayImage(data.Bpic1+".webp","Apic1");
     createCommentFromText(data.CChat1,"CChatDiv1");
     createCommentFromText(data.EChat1,"EChatDiv1");
     showTextContent(data.CTopic2,"CTopic2");
     showTextContent(data.ETopic2,"ETopic2");
-    showTextContent(data.Apromp2,"Apromp2");
-    showTextContent(data.Bpromp2,"Bpromp2");
-    displayImage(data.Apic2+".webp","Apic2");
-    displayImage(data.Bpic2+".webp","Bpic2");
+    showTextContent(data.Apromp2,"Bpromp2");
+    showTextContent(data.Bpromp2,"Apromp2");
+    displayImage(data.Apic2+".webp","Bpic2");
+    displayImage(data.Bpic2+".webp","Apic2");
     createCommentFromText(data.CChat2,"CChatDiv2");
     createCommentFromText(data.EChat2,"EChatDiv2");
     showTextContent(data.CTopic3,"CTopic3");
     showTextContent(data.ETopic3,"ETopic3");
-    showTextContent(data.Apromp3,"Apromp3");
-    showTextContent(data.Bpromp3,"Bpromp3");
-    displayImage(data.Apic3+".webp","Apic3");
-    displayImage(data.Bpic3+".webp","Bpic3");
+    showTextContent(data.Apromp3,"Bpromp3");
+    showTextContent(data.Bpromp3,"Apromp3");
+    displayImage(data.Apic3+".webp","Bpic3");
+    displayImage(data.Bpic3+".webp","Apic3");
     createCommentFromText(data.CChat3,"CChatDiv3");
     createCommentFromText(data.EChat3,"EChatDiv3");
-    displayImage(data.Apic3+".webp","Apic4");
-    displayImage(data.Bpic3+".webp","Bpic4");
+    displayImage(data.Apic3+".webp","Bpic4");
+    displayImage(data.Bpic3+".webp","Apic4");
     SetResultTitle(data.Winner);
 }
 
@@ -243,7 +243,7 @@ function SetResultTitle(text) {
     const container = document.getElementById("resultDiv");
     const resultWord =document.getElementById("resultTitle");
 
-    if(text == "1"){
+    if(text == "2"){
         container.style.backgroundColor = "#00FF00";
         resultWord.textContent = "WINNER IS GREEN SIDE";
     }else{

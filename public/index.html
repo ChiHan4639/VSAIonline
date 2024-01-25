@@ -25,7 +25,7 @@
     <div class="Mycontainer">
         <div class="row">
             <div class="col-xl-2 col-12 Sidebar" id="sidebarCollapse">
-                <div class="Sidebar_Title justify-content-center align-items-center ">
+                <div class="Sidebar_Title justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
                     <img src="img/web/02_chat_title.png" class="Sidebar_Title_Img" alt="..." data-bs-toggle="modal" data-bs-target="#PicturesModal">
                 </div>
                 <ul class="sidebarList" id="myList">
@@ -199,7 +199,7 @@
             <!-- 您可以在這裡放置更多內容 -->
             <div class="container calendarDiv">
               <div class="left">
-                <div class="calendar" id="calendar">
+                <div class="calendar" id="calendar01">
                   <div class="month">
                     <!-- <div class="monthNum">
                       2
@@ -221,7 +221,7 @@
                     <div>Fri</div>
                     <div>Sat</div>
                   </div>
-                  <div class="days"></div>
+                  <div class="days" id="days01"></div>
                   <!-- goto-today 已display: none -->
                   <div class="goto-today">
                     <div class="goto">
@@ -243,6 +243,9 @@
               </div>
               <!-- right 已display: none -->
             </div>
+
+            
+
           </div>
         </div>
       </div>

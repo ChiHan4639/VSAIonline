@@ -159,7 +159,10 @@ a{
         height: 225px !important;
     }
     .chat .me img {
-    margin-right: 6px !important;
+        margin-right: 6px !important;
+    }
+    .ResultDiv{
+        margin-bottom: 12vh !important;
     }
     .resultWord{
         font-size: 18px !important;
@@ -180,6 +183,9 @@ a{
 }
 
 @media only screen and (max-width: 1199.98px) {
+    .newHeaderDiv{
+        width: 100% !important;
+    }
     #sidebarCollapse {
         display: none;
         position: relative;
@@ -364,7 +370,7 @@ a{
 }
 
 .newHeaderDiv{
-    width: 100%;
+    width: 83.333%;
     /* border: #000000 1px solid; */
     background-color: var(--bg);
     position: absolute;
