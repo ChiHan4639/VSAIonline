@@ -177,7 +177,7 @@
   .calendar .days .next-date {
     /* color: #b3b3b3; */
     color: transparent;
-    -webkit-text-stroke: 2px white; /* for Safari */
+    -webkit-text-stroke: 1px white; /* for Safari */
     text-stroke: 1px white; /* 非標準，可能不被所有瀏覽器支持 */
 
   }

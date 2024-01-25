@@ -149,6 +149,12 @@ a{
         height: 50px !important;
         font-size: 35px !important; 
     }
+    .newHeaderDiv{
+        padding: 6% 2% !important;
+    }
+    .ChatContainer{
+        margin-top: 90px !important;
+    }
 }
 
 .Sidebar{
@@ -267,6 +273,22 @@ a{
     font-family: 'DM Sans', sans-serif;
 }
 
+.circleTitle{
+    width: 42px; 
+    height: 42px; 
+    background-color: var(--bg);
+    color: #000000;
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* 水平居中對齊子元素 */
+    margin-right: 10px; 
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+    border: #000000 2px solid;
+}
+
 .circleLanguage{
     width: 42px; 
     height: 42px; 
@@ -300,6 +322,12 @@ a{
 }
 
 /*======== 聊天室 =====*/
+
+.ChatContainer{
+    padding: 3% 2%;
+    position: relative; 
+    margin-top: 140px;
+}
 
 .Chatroom{
     background-color: #C4C4C4;
@@ -432,10 +460,6 @@ a{
     display: block;
     filter: none;
     margin-top: 10px;
-}
-
-.ChatContainer{
-    padding: 3% 2%;
 }
 
 .topicWord{
