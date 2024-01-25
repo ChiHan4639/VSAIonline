@@ -16,7 +16,9 @@ const calendar = document.querySelector(".calendar"),
   addEventTitle = document.querySelector(".event-name "),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
-  addEventSubmit = document.querySelector(".add-event-btn ");
+  addEventSubmit = document.querySelector(".add-event-btn "),
+  calendarMonth = document.getElementById("CtitleMonth"),
+  calendarNum = document.getElementById("CtitleMonthNum");
 
 let today = new Date();
 let activeDay;
@@ -71,7 +73,8 @@ function initCalendar() {
   const nextDays = 7 - lastDay.getDay() - 1;
 
   date.innerHTML = months[month] + " " + year;
-  //monthNum.innerHTML = month;
+  calendarMonth.innerHTML = months[month];
+  calendarNum.innerHTML = (month+1).toString();
   let days = "";
 
   for (let x = day; x > 0; x--) {

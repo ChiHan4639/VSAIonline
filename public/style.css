@@ -535,6 +535,19 @@ a{
     color: black;
   }
 
+
+.CalendarTitleDiv{
+    width: 100%;
+    height: auto;
+}
+
+.CalendarTitle{
+    font-family: enigma;
+    font-size: 64px;
+    color: var(--bg);
+    text-decoration: none;
+}
+
 /* 首頁modal */
 
 .home{
