@@ -27,7 +27,7 @@ html,body{
 }
 
  /* 手機響應式 */
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
     html,body{
         font-size: 16px !important;
@@ -136,6 +136,21 @@ a{
 
 /*======== 側邊選單 =====*/
 
+@media only screen and (max-width: 500px) {
+    .ListTitle{
+        font-size: 24px !important;
+    }
+
+    .ListWord{
+        font-size: 18px !important; 
+    }
+    .circle{
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 35px !important; 
+    }
+}
+
 .Sidebar{
     background-color: var(--sidebarBG);
     padding: 0px !important;
@@ -146,7 +161,7 @@ a{
     /*min-width: 250px;*/
 }
 
-@media (max-width: 1199.98px) {
+@media only screen and (max-width: 1199.98px) {
     #sidebarCollapse {
         display: none;
         position: relative;
@@ -199,8 +214,9 @@ a{
 
 .sidebarList li{
     background-color: var(--sidebarBG);
-    height: 80px;
-    padding: 6px;
+    /* height: 80px; */
+    height: auto;
+    padding: 12px;
     padding-left: 14px;
     display: flex;
     align-items: center;
@@ -546,6 +562,14 @@ a{
     font-size: 64px;
     color: var(--bg);
     text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .CalendarTitle{
+        font-family: enigma;
+        font-size: 32px;
+    }
 }
 
 /* 首頁modal */
