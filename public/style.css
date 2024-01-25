@@ -147,13 +147,29 @@ a{
     .circle{
         width: 50px !important;
         height: 50px !important;
-        font-size: 35px !important; 
+        font-size: 28px !important; 
     }
     .newHeaderDiv{
         padding: 6% 2% !important;
     }
     .ChatContainer{
         margin-top: 90px !important;
+    }
+    .chat .bubble img {
+        height: 230px !important;
+    }
+    .chat .me img {
+    margin-right: 6px !important;
+    }
+    /* .ResultDiv{
+        width: 80% !important;
+        margin: auto;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        height: 60px;
+    } */
+    .resultWord{
+        font-size: 24px !important;
     }
 }
 
@@ -425,7 +441,7 @@ a{
     margin: auto;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    height: 60px;
+    height: auto;
     padding: 6px;
     border-radius: 30px;
 }
@@ -592,7 +608,7 @@ a{
 
     .CalendarTitle{
         font-family: enigma;
-        font-size: 32px;
+        font-size: 27px;
     }
 }
 

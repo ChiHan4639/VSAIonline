@@ -568,9 +568,11 @@
   @media screen and (max-width: 500px) {
     .calendar .month {
       height: 75px;
+      padding: 0 20px;
     }
     .calendar .weekdays {
       height: 50px;
+      font-size: 18px !important;
     }
     .calendar .days .day {
       height: 40px;
