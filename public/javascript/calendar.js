@@ -1,6 +1,6 @@
-const calendar = document.getElementById("calendar01"),
-  date = document.getElementById("dateYear"),
-  daysContainer = document.getElementById("days01"),
+const calendar1 = document.getElementById("calendar01"),
+  date1 = document.getElementById("dateYear1"),
+  daysContainer1 = document.getElementById("days01"),
   prev = document.querySelector(".prev"),
   next = document.querySelector(".next"),
   todayBtn = document.querySelector(".today-btn"),
@@ -15,12 +15,29 @@ const calendar = document.getElementById("calendar01"),
   addEventTitle = document.querySelector(".event-name "),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
-  addEventSubmit = document.querySelector(".add-event-btn "),
-  calendarMonth = document.getElementById("CtitleMonth"),
-  calendarNum = document.getElementById("CtitleMonthNum")
+  addEventSubmit1 = document.querySelector(".add-event-btn "),
+  calendarMonth1 = document.getElementById("CtitleMonth1"),
+  calendarNum = document.getElementById("CtitleMonthNum1"),
   calendar2 = document.getElementById("calendar02"),
   date2 = document.getElementById("dateYear2"),
-  daysContainer2 = document.getElementById("days02");
+  daysContainer2 = document.getElementById("days02"),
+  calendarMonth2 = document.getElementById("CtitleMonth2"),
+  calendarNum2 = document.getElementById("CtitleMonthNum2"),
+  calendar3 = document.getElementById("calendar03"),
+  date3 = document.getElementById("dateYear3"),
+  daysContainer3 = document.getElementById("days03"),
+  calendarMonth3 = document.getElementById("CtitleMonth3"),
+  calendarNum3 = document.getElementById("CtitleMonthNum3"),
+  calendar4 = document.getElementById("calendar04"),
+  date4 = document.getElementById("dateYear4"),
+  daysContainer4 = document.getElementById("days04"),
+  calendarMonth4 = document.getElementById("CtitleMonth4"),
+  calendarNum4 = document.getElementById("CtitleMonthNum4"),
+  calendar5 = document.getElementById("calendar05"),
+  date5 = document.getElementById("dateYear5"),
+  daysContainer5 = document.getElementById("days05"),
+  calendarMonth5 = document.getElementById("CtitleMonth5"),
+  calendarNum5 = document.getElementById("CtitleMonthNum5");
 
 
   // calendar = document.querySelector(".calendar"),
@@ -115,15 +132,15 @@ function initCalendar() {
       getActiveDay(i);
       updateEvents(i);
       if (event) {
-        days += `<div class="day today active event">${i}</div>`;
+        days += `<div class="day today active event M1">${i}</div>`;
       } else {
-        days += `<div class="day today active">${i}</div>`;
+        days += `<div class="day today active M1">${i}</div>`;
       }
     } else {
       if (event) {
-        days += `<div class="day event">${i}</div>`;
+        days += `<div class="day event M1">${i}</div>`;
       } else {
-        days += `<div class="day ">${i}</div>`;
+        days += `<div class="day M1">${i}</div>`;
       }
     }
   }
@@ -132,21 +149,24 @@ function initCalendar() {
     days += `<div class="day next-date">${j}</div>`;
   }
   daysContainer.innerHTML = days;
-  addListner();
+  //addListner();
+  addListner(".M1");
 }
 
+//2月
 function initCalendar2() {
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
-  const prevLastDay = new Date(year, month, 0);
+  var Fmonth = month+1;
+  const firstDay = new Date(year, Fmonth, 1);
+  const lastDay = new Date(year, Fmonth + 1, 0);
+  const prevLastDay = new Date(year, Fmonth, 0);
   const prevDays = prevLastDay.getDate();
   const lastDate = lastDay.getDate();
   const day = firstDay.getDay();
   const nextDays = 7 - lastDay.getDay() - 1;
 
-  date.innerHTML = months[month] + " " + year;
-  calendarMonth.innerHTML = months[month];
-  calendarNum.innerHTML = (month+1).toString();
+  date2.innerHTML = months[Fmonth] + " " + year;
+  calendarMonth2.innerHTML = months[Fmonth];
+  calendarNum2.innerHTML = (Fmonth+1).toString();
   let days = "";
 
   for (let x = day; x > 0; x--) {
@@ -159,7 +179,7 @@ function initCalendar2() {
     eventsArr.forEach((eventObj) => {
       if (
         eventObj.day === i &&
-        eventObj.month === month + 1 &&
+        eventObj.Fmonth === Fmonth + 1 &&
         eventObj.year === year
       ) {
         event = true;
@@ -168,21 +188,21 @@ function initCalendar2() {
     if (
       i === new Date().getDate() &&
       year === new Date().getFullYear() &&
-      month === new Date().getMonth()
+      Fmonth === new Date().getMonth()
     ) {
       activeDay = i;
       getActiveDay(i);
       updateEvents(i);
       if (event) {
-        days += `<div class="day today active event">${i}</div>`;
+        days += `<div class="day today active event M2">${i}</div>`;
       } else {
-        days += `<div class="day today active">${i}</div>`;
+        days += `<div class="day today active M2">${i}</div>`;
       }
     } else {
       if (event) {
-        days += `<div class="day event">${i}</div>`;
+        days += `<div class="day event M2">${i}</div>`;
       } else {
-        days += `<div class="day ">${i}</div>`;
+        days += `<div class="day M2">${i}</div>`;
       }
     }
   }
@@ -190,8 +210,77 @@ function initCalendar2() {
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="day next-date">${j}</div>`;
   }
-  daysContainer.innerHTML = days;
-  addListner();
+  daysContainer2.innerHTML = days;
+  //addListner();
+  addListner(".M2");
+}
+
+//X月
+function NewinitCalendar(GoMonth) {
+  month += (GoMonth-1);
+  StoreMonth = GoMonth-1;
+  // 使用模板字面量來創建元素 ID
+  
+  const firstDay = new Date(year, StoreMonth, 1);
+  const lastDay = new Date(year, StoreMonth + 1, 0);
+  const prevLastDay = new Date(year, StoreMonth, 0);
+  const prevDays = prevLastDay.getDate();
+  const lastDate = lastDay.getDate();
+  const day = firstDay.getDay();
+  const nextDays = 7 - lastDay.getDay() - 1;
+
+  document.getElementById(`dateYear${GoMonth}`).innerHTML = months[StoreMonth] + " " + year;
+  document.getElementById(`CtitleMonth${GoMonth}`).innerHTML = months[StoreMonth];
+  document.getElementById(`CtitleMonthNum${GoMonth}`).innerHTML = (StoreMonth+1).toString();
+  let days = "";
+
+  for (let x = day; x > 0; x--) {
+    days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
+  }
+
+  for (let i = 1; i <= lastDate; i++) {
+    //check if event is present on that day
+    let event = false;
+    eventsArr.forEach((eventObj) => {
+      if (
+        eventObj.day === i &&
+        eventObj.StoreMonth === StoreMonth + 1 &&
+        eventObj.year === year
+      ) {
+        event = true;
+      }
+    });
+    if (
+      i === new Date().getDate() &&
+      year === new Date().getFullYear() &&
+      StoreMonth === new Date().getMonth()
+    ) {
+      activeDay = i;
+      getActiveDay(i);
+      updateEvents(i);
+      if (event) {
+        days += `<div class="day today active event M${GoMonth}">${i}</div>`;
+      } else {
+        days += `<div class="day today active M${GoMonth}">${i}</div>`;
+      }
+    } else {
+      if (event) {
+        days += `<div class="day event M${GoMonth}">${i}</div>`;
+      } else {
+        days += `<div class="day M${GoMonth}">${i}</div>`;
+      }
+    }
+  }
+
+  for (let j = 1; j <= nextDays; j++) {
+    days += `<div class="day next-date">${j}</div>`;
+  }
+  document.getElementById(`days0${GoMonth}`).innerHTML = days;
+  //addListner();
+  var addClass = `.M${GoMonth}`;
+  // console.log("+++");
+  // console.log(addClass);
+  addListner(addClass);
 }
 
 //function to add month and year on prev and next button
@@ -216,27 +305,56 @@ function nextMonth() {
 prev.addEventListener("click", prevMonth);
 next.addEventListener("click", nextMonth);
 
-initCalendar();
+//initCalendar();
+//initCalendar2();
+NewinitCalendar(1);
+NewinitCalendar(2);
+NewinitCalendar(3);
+NewinitCalendar(4);
+NewinitCalendar(5);
 
 //function to add active on day
-function addListner() {
-  const days = document.querySelectorAll(".day");
+function addListner(targetClass) {
+  //const days = document.querySelectorAll(".day");
+  const days = document.querySelectorAll(targetClass);
+  const allDays = document.querySelectorAll(".day");
   days.forEach((day) => {
     day.addEventListener("click", (e) => {
       getActiveDay(e.target.innerHTML);
       updateEvents(Number(e.target.innerHTML));
       activeDay = Number(e.target.innerHTML);
       //remove active
-      days.forEach((day) => {
+      //這裡已調整成把所有按鈕的active都刪除的方法！
+      allDays.forEach((day) => {
         day.classList.remove("active");
       });
+      //console.log(e.target.classList);
       //這裡加入要搜尋該日期結果的內容
-      const mixDate = document.getElementById("dateYear").textContent;
+      //const mixDate = document.getElementById("dateYear1").textContent;
+      let targetMonth = 0;
+      if(e.target.classList.contains("M1")){
+        targetMonth = "01";
+        console.log("1月");
+      }else if(e.target.classList.contains("M2")){
+        targetMonth = "02";
+        console.log("2月");
+      }else if(e.target.classList.contains("M3")){
+        targetMonth = "03";
+        console.log("3月");
+      }else if(e.target.classList.contains("M4")){
+        targetMonth = "04";
+        console.log("4月");
+      }else if(e.target.classList.contains("M5")){
+        targetMonth = "05";
+        console.log("5月");
+      }
       activeDay = Number(e.target.innerHTML)
-      const monthText = mixDate.split(" ")[0];
-      const yearNum = mixDate.split(" ")[1];
-      const monthNum = getMonthNumber(monthText);
-      HoldData(yearNum,monthNum,activeDay.toString());
+      //const monthText = mixDate.split(" ")[0];
+      const yearNum = 2024;
+      //const monthNum = getMonthNumber(monthText);
+      //console.log("Y:"+yearNum+"M:"+targetMonth+"D:"+activeDay);
+      console.log(yearNum+"/"+targetMonth+"/"+activeDay);
+      HoldData(yearNum.toString(),targetMonth,activeDay.toString());
     //   const myModal = new bootstrap.Modal('#fullscreenModal');
     //   myModal.hide();
       var myModalEl = document.getElementById('fullscreenModal');

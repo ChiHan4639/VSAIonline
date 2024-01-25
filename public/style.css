@@ -606,6 +606,12 @@ a{
     text-decoration: none;
 }
 
+.HrOfCalandar{
+    color: white;
+    width: 75% !important;
+    margin: auto;
+}
+
 @media only screen and (max-width: 768px) {
 
     .CalendarTitle{
