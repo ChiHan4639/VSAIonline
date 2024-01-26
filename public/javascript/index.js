@@ -220,8 +220,16 @@ function createCommentFromText(text,containerId) {
             // 添加圖像
             const img = document.createElement("img");
             img.src = type === "PPurle:" ? "img/web/03_chat_P.png" : "img/web/03_chat_G.png";
+            //img.className = "HeadStyle";
             commentDiv.appendChild(img);
     
+            // 添加對話框圖像
+            const img2 = document.createElement("img");
+            img2.src = type === "PPurle:" ? "img/PurpleChat.png" : "img/GreenChat.png";
+            img2.className = type === "PPurle:" ? "ChatStyleP" : "ChatStyleG";
+            //"ChatStyle";
+            commentDiv.appendChild(img2);
+
             // 創建 bubble 和 span
             const bubbleDiv = document.createElement("div");
             bubbleDiv.className = "bubble";

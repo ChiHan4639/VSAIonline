@@ -541,7 +541,7 @@ a{
     font-family: var(--font-1);
     max-width: 70%;
     position: relative;
-    margin: 0px 20px;
+    /* margin: 0px 20px; */
   }
   
   .chat .me .bubble {
@@ -555,6 +555,67 @@ a{
     text-align: left;
   }
   
+  .DivCP{
+    background-color: var(--VSGreen);
+    position: relative;
+    width: 4px;
+    height: 9px;
+    z-index: 10;
+    margin-top: 17px;
+    right: 86px;
+  }
+
+    .ChatStyleP {
+        position: relative;
+        float: right;
+        margin-right: 5px;
+        margin-left: -2px;
+        margin-top: 10px;
+        width: 12px !important; 
+        height: 18px !important;
+        z-index: 9;
+        border-radius: 0 !important;
+    }
+  
+    .ChatStyleG {
+        position: relative;
+        float: left;
+        margin-left: 5px;
+        margin-right: -2px;
+        margin-top: 10px;
+        width: 12px !important; 
+        height: 18px !important;
+        z-index: 9;
+        border-radius: 0 !important;
+    }
+
+@media only screen and (max-width: 500px) {
+
+    .ChatStyleP {
+        position: relative;
+        float: right;
+        margin-right: 5px;
+        margin-left: 2px;
+        margin-top: 10px;
+        width: 0px !important; 
+        height: 18px !important;
+        z-index: 9;
+        border-radius: 0 !important;
+    }
+  
+    .ChatStyleG {
+        position: relative;
+        float: left;
+        margin-left: 5px;
+        margin-right: 2px;
+        margin-top: 10px;
+        width: 0px !important; 
+        height: 18px !important;
+        z-index: 9;
+        border-radius: 0 !important;
+    }
+}
+
   .chat .other .bubble:before {
     content: "";
     top: 0px;
