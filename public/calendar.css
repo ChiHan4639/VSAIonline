@@ -553,7 +553,7 @@
       padding: 20px;
     }
     .container {
-      min-height: 60vh !important;
+      min-height: 80vh !important;
     }
   }
 
@@ -563,7 +563,7 @@
       justify-content: flex-start;
     }
     .container {
-      min-height: 60vh;
+      min-height: 80vh;
       flex-direction: column;
       border-radius: 0;
     }
